@@ -1,0 +1,367 @@
+Source Code (Searching):
+
+#include <stdio.h>
+
+#include <conio.h>
+
+#include <malloc.h>
+
+void main()
+
+{ struct node{
+int info;
+struct node *next;
+};
+int option;
+
+struct node *new_node, "ptr, *begin=NULL;
+int item:
+int option;
+clrscr();
+
+new_node=(struct node *)malloc(sizeof(struct node));
+printf("\nEnter the element: ");
+scanf("%d", &item);
+
+new_node->info=item;
+new_node->next=NULL;
+
+begin new_node;
+ptr-begin;
+
+printf("\nDo you want to enter other element 1. Yes 2. No: ");
+scanf("%d",&option);
+while(option!=2)
+
+{
+
+new_node=(struct node *)malloc(sizeof(struct node));
+
+printf("\nEnter the element: ");
+
+scanf("%d", &item);
+
+new_node->info=item;
+
+new_node->next=NULL;
+
+ptr->next=new_node;
+ptr=new_node;
+
+printf("\nDo you want to enter other element 1. Yes 2. No: ");
+
+scanf("%d", &option);
+
+}
+
+printf("\nThe Linked List: \n");
+
+ptr=begin;
+
+while(ptr!=NULL)
+
+{ printf("\t%d",ptr->info);
+ptr=ptr->next;
+
+printf("\nEnter the element to be searched: ");
+
+scanf("%d", &item);
+
+ptr=begin;
+
+while(ptr!=NULL)
+
+{
+
+if(ptr->info==item)
+
+{ printf("\nThe element is present in the list.");
+getch();
+exit(0); }
+
+ptr=ptr->next;
+
+printf("\nThe element is not present in the list. ");
+
+getch();
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Source Code (Reversing):
+
+#include <stdio.h>
+#include <malloc.h>
+#include <stdlib.h>
+
+void main()
+
+{ struct node{
+int info;
+struct node *next; };
+
+struct node *new_node, *ptr,*ptr1,*ptr2, *ptr3,*begin=NULL;
+int item;
+
+int option;
+
+clrscr();
+
+new_node=(struct node *)malloc(sizeof(struct node));
+printf("\nEnter the element: ");
+scanf("%d", &item);
+
+new_node->info=item;
+new_node->next=NULL;
+
+begin=new_node;
+ptr=begin;
+
+printf("\nDo you want to enter other element 1. Yes 2. No: ");
+scanf("%d",&option);
+
+while(option!=2)
+
+{ new_node=(struct node *)malloc(sizeof(struct node));
+printf("\nEnter the element: ");
+
+scanf("%d", &item);
+
+new_node->info=item;
+
+new_node->next=NULL;
+ptr->next=new_node;
+
+ptr=new_node;
+
+printf("\nDo you want to enter other element 1. Yes 2. No: ");
+scanf("%d", &option);
+
+}
+
+printf("\nThe Linked List: ");
+ptr-begin;
+
+while(ptr!=NULL)
+{
+printf("\t%d",ptr->info); ptr=ptr->next; }
+
+//if the list has only one element
+if(begin->next==NULL) {
+
+printf("\n The list has only one element.");
+
+getch();
+exit(0);
+
+}
+
+//define *ptr1,*ptr2,"ptr3
+if(begin->next!=NULL)
+
+{
+
+ptr1=begin; ptr2=ptr1->next;
+ptr3=ptr2->next; }
+
+//if the list has only two nodes 
+if(ptr3==NULL)
+
+{ ptr2->next=ptr1;
+ptr1->next=NULL;
+begin=ptr2;
+
+printf("\n\nThe Reversed Linked List: ");
+
+ptr=begin;
+
+while(ptr!=NULL)
+
+{ printf("\t%d",ptr->info);
+
+ptr ptr->next;
+
+}
+
+getch();
+
+exit(0);
+
+}
+
+//if the list has more than two nodes
+ptr1->next=NULL;
+while(ptr3->next!=NULL)
+
+{ ptr2->next=ptr1;
+ptr1=ptr2;
+ptr2=ptr3;
+ptr3=ptr3->next; }
+ptr2->next=ptr1;
+
+ptr3->next-ptr2;
+
+begin=ptr3;
+
+printf("\n\nThe Reversed Linked List: ");
+
+ptr=begin;
+while(ptr!=NULL)
+
+printf("\t%d",ptr->info);
+
+ptr=ptr->next;
+
+} getch();
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Source Code (Sorting):
+
+#include <stdio.h>
+#include <malloc.h>
+#include <stdlib.h>
+void main()
+
+{
+
+struct node(
+
+int info;
+struct node *pre;
+struct node *next;
+
+struct node "new_node, *ptr,*ptr1,*ptr2, *begin=NULL;
+int item, n, option, temp, p, i;
+
+clrscr();
+
+new_node=(struct node *)malloc(sizeof(struct node));
+printf("\nEnter the element: ");
+scanf("%d", &item);
+
+n=1;
+
+new_node->info=item;
+
+new_node->pre=NULL;
+
+new_node->next=NULL;
+
+begin=new_node;
+
+ptr=begin;
+
+printf("\nDo you want to enter other element 1. Yes 2. No: ");
+scanf("%d",&option);
+
+while(option!=2)
+
+{
+
+new_node=(struct node *)malloc(sizeof(struct node));
+
+printf("\nEnter the element: ");
+
+scanf("%d", &item);
+
+n=n+1; //counter for number of elements.
+
+new_node->info=item;
+
+new_node->pre=ptr;
+
+new_node->next=NULL;
+
+ptr->next=new_node;
+
+ptr=new_node;
+
+printf("\nDo you want to enter other element 1. Yes 2. No: ");
+
+scanf("%d", &option);
+
+}
+
+printf("\nThe Linked List: ");
+
+ptr=begin;
+
+while(ptr!=NULL)
+
+{ printf("\t%d",ptr->info);
+
+ptr=ptr->next;
+
+}
+
+printf("\nTotal No. of Passes %d ",n-1);
+
+if(n==1)//List has only one element
+
+{ printf("\nThere is only one element in the list.");
+getch();
+
+exit(0);
+
+}
+
+for(p=0;p<n-1;p++)
+
+{ ptr1=begin; //every iteration you will start with first element so reset
+
+positions
+
+ptr2-begin->next;
+
+for(i=0;i<n-p-1;i++)
+
+{ if(ptr1->info>ptr2->info)
+
+{ temp-ptr1->info; ptr1->info-ptr2->info; ptr2->info=temp; } ptr1=ptr2;
+ptr2=ptr2->next;
+
+8
+
+}
+
+printf("\nThe Sorted Linked List: ");
+ptr=begin;
+
+while(ptr!=NULL)
+
+{ } printf("\t%d",ptr->info);
+ptr=ptr->next;
+
+getch();
+
+}
+
